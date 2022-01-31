@@ -13,12 +13,12 @@ def main():
     while keep_playing:
         new_game = game.Hangman()
         while new_game.get_lives() > 0 and not new_game.win_con():
-            guess = input("Guess a letter: ").upper()
+            guess = input("Guess a letter: ").strip().upper()
             if guess == new_game.get_word():
                 break
 
             while not check_input(guess):
-                guess = input("Character must be a single character and a letter: ").upper()
+                guess = input("Character must be a single character and a letter: ").strip().upper()
 
             if guess_check(guess, new_game.get_word()):
                 guessed_word = new_game.change_g_word(guess)
