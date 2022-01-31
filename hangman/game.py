@@ -1,6 +1,4 @@
-from ntpath import join
 import random
-
 
 #local functions
 def select_word():
